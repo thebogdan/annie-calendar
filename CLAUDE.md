@@ -77,6 +77,8 @@ Pearson Elementary School
 Poulsbo, WA 98370
 ```
 
+Prefix event titles held at Pearson with `Pearson -` so the venue is immediately visible in BAND. For example: `Pearson - Scene 10b Rehearsal`.
+
 Escape commas in iCalendar text fields:
 
 ```text
