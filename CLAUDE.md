@@ -38,16 +38,16 @@ Use readable titles while preserving production-specific cast labels:
 - `ABCD` becomes `Cast ABCD`.
 - `A` in a character list means `Annie`.
 - `WB` means `Warbucks`, not `Daddy Warbucks`.
-- `G` means `Grace Farrell`.
-- `H, R, L` means `Miss Hannigan, Rooster, and Lily`.
+- `G` means `Grace`; do not include her last name, `Farrell`, in event titles.
+- `H, R, L` means `Hannigan, Rooster, and Lily`; do not put `Miss` before `Hannigan`.
 - `Dancers` may be titled `Dance Rehearsal`.
 - A generic source entry named `Meeting` remains `Meeting` unless more context is provided.
 
 Examples:
 
 - `AB A & WB Choreo` becomes `Cast AB - Annie and Warbucks Choreography`.
-- `CD A, WB, G Choreo` becomes `Cast CD - Annie, Warbucks, and Grace Farrell Choreography`.
-- `ABCD H, R, L Choreo & Vocals` becomes `Cast ABCD - Miss Hannigan, Rooster, and Lily Choreography & Vocals`.
+- `CD A, WB, G Choreo` becomes `Cast CD - Annie, Warbucks, and Grace Choreography`.
+- `ABCD H, R, L Choreo & Vocals` becomes `Cast ABCD - Hannigan, Rooster, and Lily Choreography & Vocals`.
 
 Avoid titles such as `All Casts` when the source says `ABCD`; “all casts” can sound like every company member is called.
 
