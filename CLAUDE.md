@@ -61,6 +61,14 @@ The Creative Consortium
 Poulsbo, WA 98370
 ```
 
+The **KCMT Room** is a specific room inside The Creative Consortium, not a separate venue. When the source says a rehearsal takes place in the KCMT Room only, use:
+
+```text
+KCMT Room, The Creative Consortium
+1015 NE Hostmark St #101
+Poulsbo, WA 98370
+```
+
 Pearson Elementary School is:
 
 ```text
