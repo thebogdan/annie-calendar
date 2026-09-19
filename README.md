@@ -1,9 +1,14 @@
 # Annie Calendar
 
-This repository hosts the Annie rehearsal calendar used by BAND's **Subscribe by URL** feature.
+This repository hosts KCMT calendars used by BAND's **Subscribe by URL** feature.
 
-Calendar URL:
+Calendar URLs:
 
-`https://thebogdan.github.io/annie-calendar/calendar.ics`
+- Group Calendar: `https://thebogdan.github.io/annie-calendar/group.ics`
+- Rehearsal Calendar: `https://thebogdan.github.io/annie-calendar/rehearsal.ics`
+- Harmony Singers: `https://thebogdan.github.io/annie-calendar/harmony-singers.ics`
+- Dancer Schedule: `https://thebogdan.github.io/annie-calendar/dancers.ics`
+- Sets: `https://thebogdan.github.io/annie-calendar/sets.ics`
+- Marketing Calendar: `https://thebogdan.github.io/annie-calendar/marketing.ics`
 
-The URL remains unchanged as events are added or corrected.
+These URLs remain unchanged as events are added or corrected.
