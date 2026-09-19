@@ -49,6 +49,8 @@ Examples:
 - `CD A, WB, G Choreo` becomes `Cast CD - Annie, Warbucks, and Grace Choreography`.
 - `ABCD H, R, L Choreo & Vocals` becomes `Cast ABCD - Hannigan, Rooster, and Lily Choreography & Vocals`.
 
+For paired-cast run-throughs, retain both the attending pair and the featured cast. Examples: `Cast CD - Cast C Run-Through`, `Cast AB - Cast A Run-Through`, `Cast CD - Cast D Run-Through`, and `Cast AB - Cast B Run-Through`.
+
 Avoid titles such as `All Casts` when the source says `ABCD`; “all casts” can sound like every company member is called.
 
 ## Locations
@@ -79,6 +81,16 @@ Poulsbo, WA 98370
 
 Prefix event titles held at Pearson with `Pearson -` so the venue is immediately visible in BAND. For example: `Pearson - Scene 10b Rehearsal`.
 
+Poulsbo Middle School is the performance venue:
+
+```text
+Poulsbo Middle School
+18360 Caldart Ave NE
+Poulsbo, WA 98370
+```
+
+Use Poulsbo Middle School for Move-In, dress rehearsals, and performances unless a later schedule says otherwise. Dress rehearsals belong in Rehearsal Calendar; public performances belong in Group Calendar.
+
 Escape commas in iCalendar text fields:
 
 ```text
@@ -104,6 +116,7 @@ DTEND:20260920T010000Z
 This is valid and still displays as September 19 from 3:00–6:00 PM in Pacific time.
 
 - When a source gives a start time but no end time, use a one-hour duration only when the user has approved that default.
+- A date-time event may omit `DTEND` when the source provides only a start time and the user prefers not to guess a duration. Omit `LOCATION` too when the venue is unresolved.
 - Preserve simultaneous or overlapping events as separate `VEVENT` blocks.
 - Do not invent recurrences. A pattern such as Friday dancer rehearsals should be added only for the dates covered by the supplied schedule unless the user explicitly requests a recurring event.
 - When a pasted calendar table has shifted weekday columns, prefer the printed date number, but flag the discrepancy before publishing if it changes the interpretation.
