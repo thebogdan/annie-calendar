@@ -73,10 +73,10 @@ Escape commas in iCalendar text fields:
 
 ```text
 LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
- WA 98370
+  WA 98370
 ```
 
-The second physical line begins with one space because it is a folded continuation line.
+The second physical line begins with two spaces: the first is the iCalendar fold marker and is removed during unfolding; the second is the actual space required between the comma and `WA`.
 
 ## Date and time rules
 
@@ -124,7 +124,7 @@ DTSTART:20260919T220000Z
 DTEND:20260920T010000Z
 SUMMARY:Cast AB Rehearsal
 LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
- WA 98370
+  WA 98370
 END:VEVENT
 ```
 
@@ -134,7 +134,8 @@ Formatting rules:
 - Keep the same `UID` when correcting an existing event so subscribers can update it rather than create a duplicate.
 - Never reuse one event's UID for a different event.
 - Escape commas as `\,`, semicolons as `\;`, backslashes as `\\`, and embedded newlines as `\n` in text values.
-- Fold content lines longer than 75 octets. Continuation lines must begin with a single space.
+- Fold content lines longer than 75 octets. A continuation line must begin with a space or tab, and that first whitespace character is removed when a reader unfolds the value.
+- When a fold occurs between words, preserve the logical separator. Either leave the real space at the end of the preceding physical line or begin the continuation with two spaces: one fold marker plus one content space. Using only one leading space joins the words (for example, `FarrellChoreography` or `&Vocals`).
 - Prefer CRLF line endings for standards-compliant `.ics` files. Be aware that some files in this repository may contain mixed historical line endings; avoid committing line-ending-only rewrites unless intentional.
 - Empty feeds are valid and should retain their VCALENDAR wrapper so their subscription URLs remain stable.
 
