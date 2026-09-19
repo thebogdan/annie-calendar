@@ -1,0 +1,154 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Annie Production//September 2026 Rehearsals//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Annie Rehearsals - September 2026
+X-WR-TIMEZONE:America/Los_Angeles
+BEGIN:VTIMEZONE
+TZID:America/Los_Angeles
+X-LIC-LOCATION:America/Los_Angeles
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0800
+TZOFFSETTO:-0700
+TZNAME:PDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0800
+TZNAME:PST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:annie-20260919-casts-cd@band-us.local
+DTSTAMP:20260919T190000Z
+DTSTART;TZID=America/Los_Angeles:20260919T100000
+DTEND;TZID=America/Los_Angeles:20260919T130000
+SUMMARY:Casts C and D Rehearsal
+LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+ WA 98370
+END:VEVENT
+BEGIN:VEVENT
+UID:annie-20260919-scene-4a@band-us.local
+DTSTAMP:20260919T190000Z
+DTSTART;TZID=America/Los_Angeles:20260919T130000
+DTEND;TZID=America/Los_Angeles:20260919T150000
+SUMMARY:Scene 4a Rehearsal
+LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+ WA 98370
+END:VEVENT
+BEGIN:VEVENT
+UID:annie-20260919-casts-ab@band-us.local
+DTSTAMP:20260919T190000Z
+DTSTART;TZID=America/Los_Angeles:20260919T150000
+DTEND;TZID=America/Los_Angeles:20260919T180000
+SUMMARY:Casts A and B Rehearsal
+LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+ WA 98370
+END:VEVENT
+BEGIN:VEVENT
+UID:annie-20260922-scene-4b@band-us.local
+DTSTAMP:20260919T190000Z
+DTSTART;TZID=America/Los_Angeles:20260922T163000
+DTEND;TZID=America/Los_Angeles:20260922T183000
+SUMMARY:Scene 4b Rehearsal
+LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+ WA 98370
+END:VEVENT
+BEGIN:VEVENT
+UID:annie-20260922-cd-annie-warbucks-grace@band-us.local
+DTSTAMP:20260919T190000Z
+DTSTART;TZID=America/Los_Angeles:20260922T183000
+DTEND;TZID=America/Los_Angeles:20260922T193000
+SUMMARY:Casts C and D - Annie\, Daddy Warbucks\, and Grace Farrell
+ Choreography
+LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+ WA 98370
+END:VEVENT
+BEGIN:VEVENT
+UID:annie-20260924-scene-5a@band-us.local
+DTSTAMP:20260919T190000Z
+DTSTART;TZID=America/Los_Angeles:20260924T163000
+DTEND;TZID=America/Los_Angeles:20260924T183000
+SUMMARY:Scene 5a Rehearsal
+LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+ WA 98370
+END:VEVENT
+BEGIN:VEVENT
+UID:annie-20260924-all-casts-hannigan-rooster-lily@band-us.local
+DTSTAMP:20260919T190000Z
+DTSTART;TZID=America/Los_Angeles:20260924T163000
+DTEND;TZID=America/Los_Angeles:20260924T193000
+SUMMARY:All Casts - Miss Hannigan\, Rooster\, and Lily Choreography &
+ Vocals
+LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+ WA 98370
+END:VEVENT
+BEGIN:VEVENT
+UID:annie-20260925-dance@band-us.local
+DTSTAMP:20260919T190000Z
+DTSTART;TZID=America/Los_Angeles:20260925T163000
+DTEND;TZID=America/Los_Angeles:20260925T193000
+SUMMARY:Dance Rehearsal
+LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+ WA 98370
+END:VEVENT
+BEGIN:VEVENT
+UID:annie-20260925-volunteer-meeting@band-us.local
+DTSTAMP:20260919T190000Z
+DTSTART;TZID=America/Los_Angeles:20260925T164500
+DTEND;TZID=America/Los_Angeles:20260925T180000
+SUMMARY:Open Volunteer Meeting
+LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+ WA 98370
+END:VEVENT
+BEGIN:VEVENT
+UID:annie-20260926-casts-cd@band-us.local
+DTSTAMP:20260919T190000Z
+DTSTART;TZID=America/Los_Angeles:20260926T100000
+DTEND;TZID=America/Los_Angeles:20260926T130000
+SUMMARY:Casts C and D Rehearsal
+LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+ WA 98370
+END:VEVENT
+BEGIN:VEVENT
+UID:annie-20260926-scene-5b@band-us.local
+DTSTAMP:20260919T190000Z
+DTSTART;TZID=America/Los_Angeles:20260926T130000
+DTEND;TZID=America/Los_Angeles:20260926T150000
+SUMMARY:Scene 5b Rehearsal
+LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+ WA 98370
+END:VEVENT
+BEGIN:VEVENT
+UID:annie-20260926-casts-ab@band-us.local
+DTSTAMP:20260919T190000Z
+DTSTART;TZID=America/Los_Angeles:20260926T150000
+DTEND;TZID=America/Los_Angeles:20260926T180000
+SUMMARY:Casts A and B Rehearsal
+LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+ WA 98370
+END:VEVENT
+BEGIN:VEVENT
+UID:annie-20260929-scene-7a@band-us.local
+DTSTAMP:20260919T190000Z
+DTSTART;TZID=America/Los_Angeles:20260929T163000
+DTEND;TZID=America/Los_Angeles:20260929T183000
+SUMMARY:Scene 7a Rehearsal
+LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+ WA 98370
+END:VEVENT
+BEGIN:VEVENT
+UID:annie-20260929-ab-annie-warbucks@band-us.local
+DTSTAMP:20260919T190000Z
+DTSTART;TZID=America/Los_Angeles:20260929T183000
+DTEND;TZID=America/Los_Angeles:20260929T193000
+SUMMARY:Casts A and B - Annie and Daddy Warbucks Choreography
+LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+ WA 98370
+END:VEVENT
+END:VCALENDAR
