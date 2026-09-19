@@ -10,7 +10,7 @@ UID:annie-20260919-casts-cd@band-us.local
 DTSTAMP:20260919T190000Z
 DTSTART:20260919T170000Z
 DTEND:20260919T200000Z
-SUMMARY:Casts C and D Rehearsal
+SUMMARY:Cast CD Rehearsal
 LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
  WA 98370
 END:VEVENT
@@ -28,7 +28,7 @@ UID:annie-20260919-casts-ab@band-us.local
 DTSTAMP:20260919T190000Z
 DTSTART:20260919T220000Z
 DTEND:20260920T010000Z
-SUMMARY:Casts A and B Rehearsal
+SUMMARY:Cast AB Rehearsal
 LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
  WA 98370
 END:VEVENT
@@ -46,7 +46,7 @@ UID:annie-20260922-cd-annie-warbucks-grace@band-us.local
 DTSTAMP:20260919T190000Z
 DTSTART:20260923T013000Z
 DTEND:20260923T023000Z
-SUMMARY:Casts C and D - Annie\, Daddy Warbucks\, and Grace Farrell
+SUMMARY:Cast CD - Annie\, Warbucks\, and Grace Farrell
  Choreography
 LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
  WA 98370
@@ -75,7 +75,7 @@ UID:annie-20260926-casts-cd@band-us.local
 DTSTAMP:20260919T190000Z
 DTSTART:20260926T170000Z
 DTEND:20260926T200000Z
-SUMMARY:Casts C and D Rehearsal
+SUMMARY:Cast CD Rehearsal
 LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
  WA 98370
 END:VEVENT
@@ -93,7 +93,7 @@ UID:annie-20260926-casts-ab@band-us.local
 DTSTAMP:20260919T190000Z
 DTSTART:20260926T220000Z
 DTEND:20260927T010000Z
-SUMMARY:Casts A and B Rehearsal
+SUMMARY:Cast AB Rehearsal
 LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
  WA 98370
 END:VEVENT
@@ -111,7 +111,7 @@ UID:annie-20260929-ab-annie-warbucks@band-us.local
 DTSTAMP:20260919T190000Z
 DTSTART:20260930T013000Z
 DTEND:20260930T023000Z
-SUMMARY:Casts A and B - Annie and Daddy Warbucks Choreography
+SUMMARY:Cast AB - Annie and Warbucks Choreography
 LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
  WA 98370
 END:VEVENT
