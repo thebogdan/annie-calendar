@@ -79,15 +79,15 @@ Avoid titles such as `All Casts` when the source says `ABCD`; “all casts” ca
 Use this default location unless the source schedule names another venue:
 
 ```text
-The Creative Consortium
+Poulsbo Commons
 1015 NE Hostmark St #101
 Poulsbo, WA 98370
 ```
 
-The **KCMT Room** is a specific room inside The Creative Consortium, not a separate venue. When the source says a rehearsal takes place in the KCMT Room only, use:
+The **KCMT Room** is a specific room inside Poulsbo Commons, not a separate venue. When the source says a rehearsal takes place in the KCMT Room only, use:
 
 ```text
-KCMT Room, The Creative Consortium
+KCMT Room, Poulsbo Commons
 1015 NE Hostmark St #101
 Poulsbo, WA 98370
 ```
@@ -115,7 +115,7 @@ Use Poulsbo Middle School for Move-In, dress rehearsals, and performances unless
 Escape commas in iCalendar text fields:
 
 ```text
-LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+LOCATION:Poulsbo Commons\, 1015 NE Hostmark St #101\, Poulsbo\,
   WA 98370
 ```
 
@@ -167,7 +167,7 @@ DTSTAMP:20260919T190000Z
 DTSTART:20260919T220000Z
 DTEND:20260920T010000Z
 SUMMARY:Cast AB Rehearsal
-LOCATION:The Creative Consortium\, 1015 NE Hostmark St #101\, Poulsbo\,
+LOCATION:Poulsbo Commons\, 1015 NE Hostmark St #101\, Poulsbo\,
   WA 98370
 END:VEVENT
 ```
