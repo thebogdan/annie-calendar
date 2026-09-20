@@ -27,10 +27,23 @@ CSV_HEADERS = (
     "Start Time",
     "End Date",
     "End Time",
-    "All Day Event",
+    "All day event",
+    "Reminder on/off",
+    "Reminder Date",
+    "Reminder Time",
+    "Meeting Organizer",
+    "Required Attendees",
+    "Optional Attendees",
+    "Meeting Resources",
+    "Billing Information",
+    "Categories",
     "Description",
     "Location",
+    "Mileage",
+    "Priority",
     "Private",
+    "Sensitivity",
+    "Show time as",
 )
 
 
@@ -119,7 +132,7 @@ def format_date(value: date | datetime) -> str:
 
 def format_time(value: datetime) -> str:
     hour = value.hour % 12 or 12
-    return f"{hour}:{value.minute:02d} {'AM' if value.hour < 12 else 'PM'}"
+    return f"{hour}:{value.minute:02d}:00 {'AM' if value.hour < 12 else 'PM'}"
 
 
 def event_to_row(
@@ -162,17 +175,30 @@ def event_to_row(
         "Start Time": start_time,
         "End Date": format_date(end_date) if end_date else "",
         "End Time": end_time,
-        "All Day Event": "True" if start.all_day else "False",
+        "All day event": "True" if start.all_day else "False",
+        "Reminder on/off": "False",
+        "Reminder Date": "",
+        "Reminder Time": "",
+        "Meeting Organizer": "",
+        "Required Attendees": "",
+        "Optional Attendees": "",
+        "Meeting Resources": "",
+        "Billing Information": "",
+        "Categories": "",
         "Description": "\n\n".join(description_parts),
         "Location": location,
+        "Mileage": "",
+        "Priority": "Normal",
         "Private": "False",
+        "Sensitivity": "Normal",
+        "Show time as": "2",
     }
 
 
 def row_sort_key(row: dict[str, str]) -> tuple[datetime, str]:
     start_date = datetime.strptime(row["Start Date"], "%m/%d/%Y")
     if row["Start Time"]:
-        start_time = datetime.strptime(row["Start Time"], "%I:%M %p").time()
+        start_time = datetime.strptime(row["Start Time"], "%I:%M:%S %p").time()
         start_date = datetime.combine(start_date.date(), start_time)
     return start_date, row["Subject"]
 
