@@ -144,10 +144,6 @@ def event_to_row(
     location = unescape_text(event.get("LOCATION", ({}, ""))[1]).strip()
     source_description = unescape_text(event.get("DESCRIPTION", ({}, ""))[1]).strip()
 
-    description_parts = [part for part in (source_description,) if part]
-    if location:
-        description_parts.append(f"Location: {location}")
-
     if start.all_day:
         start_date = start.value
         if end is not None:
@@ -185,7 +181,7 @@ def event_to_row(
         "Meeting Resources": "",
         "Billing Information": "",
         "Categories": "",
-        "Description": "\n\n".join(description_parts),
+        "Description": source_description,
         "Location": location,
         "Mileage": "",
         "Priority": "Normal",

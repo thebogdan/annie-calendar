@@ -1,4 +1,4 @@
 Subject,Start Date,Start Time,End Date,End Time,All day event,Reminder on/off,Reminder Date,Reminder Time,Meeting Organizer,Required Attendees,Optional Attendees,Meeting Resources,Billing Information,Categories,Description,Location,Mileage,Priority,Private,Sensitivity,Show time as
 Sound Setup,11/15/2026,6:30:00 PM,11/15/2026,8:30:00 PM,False,False,,,,,,,,,,,,Normal,False,Normal,2
-Move-In,11/23/2026,8:00:00 AM,11/23/2026,5:00:00 PM,False,False,,,,,,,,,"Location: Poulsbo Middle School, 18360 Caldart Ave NE, Poulsbo, WA 98370","Poulsbo Middle School, 18360 Caldart Ave NE, Poulsbo, WA 98370",,Normal,False,Normal,2
-Move-Out,12/13/2026,8:00:00 PM,12/13/2026,10:00:00 PM,False,False,,,,,,,,,"Location: Poulsbo Middle School, 18360 Caldart Ave NE, Poulsbo, WA 98370","Poulsbo Middle School, 18360 Caldart Ave NE, Poulsbo, WA 98370",,Normal,False,Normal,2
+Move-In,11/23/2026,8:00:00 AM,11/23/2026,5:00:00 PM,False,False,,,,,,,,,,"Poulsbo Middle School, 18360 Caldart Ave NE, Poulsbo, WA 98370",,Normal,False,Normal,2
+Move-Out,12/13/2026,8:00:00 PM,12/13/2026,10:00:00 PM,False,False,,,,,,,,,,"Poulsbo Middle School, 18360 Caldart Ave NE, Poulsbo, WA 98370",,Normal,False,Normal,2
