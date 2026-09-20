@@ -183,7 +183,7 @@ def convert_calendar(name: str) -> int:
     rows = sorted((event_to_row(event) for event in read_events(source)), key=row_sort_key)
 
     with destination.open("w", encoding="utf-8", newline="") as csv_file:
-        writer = csv.DictWriter(csv_file, fieldnames=CSV_HEADERS, lineterminator="\r\n")
+        writer = csv.DictWriter(csv_file, fieldnames=CSV_HEADERS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
