@@ -1,21 +1,42 @@
 # KCMT BAND Calendar Maintenance
 
-This repository publishes iCalendar (`.ics`) feeds for KCMT calendars. BAND subscribes to these feeds through **Subscribe by URL**, so calendar updates are made by editing the appropriate `.ics` file and publishing it to GitHub Pages.
+This repository publishes KCMT calendars in both iCalendar (`.ics`) and CSV (`.csv`) formats. The `.ics` files support **Subscribe by URL**; the generated CSV files support **Import by File**, which creates events that can be edited directly in BAND.
 
 ## Source of truth
 
-Only the six subscribed feed files are active sources of truth:
+The six `.ics` files are the event sources of truth. Each has a generated `.csv` counterpart that must be regenerated and published whenever its source changes:
 
-| Calendar | File | Public URL |
-| --- | --- | --- |
-| Group Calendar | `group.ics` | `https://thebogdan.github.io/annie-calendar/group.ics` |
-| Rehearsal Calendar | `rehearsal.ics` | `https://thebogdan.github.io/annie-calendar/rehearsal.ics` |
-| Harmony Singers | `harmony-singers.ics` | `https://thebogdan.github.io/annie-calendar/harmony-singers.ics` |
-| Dancer Schedule | `dancers.ics` | `https://thebogdan.github.io/annie-calendar/dancers.ics` |
-| Sets | `sets.ics` | `https://thebogdan.github.io/annie-calendar/sets.ics` |
-| Marketing Calendar | `marketing.ics` | `https://thebogdan.github.io/annie-calendar/marketing.ics` |
+| Calendar | Source | Subscribed URL | Import file | CSV URL |
+| --- | --- | --- | --- | --- |
+| Group Calendar | `group.ics` | `https://thebogdan.github.io/annie-calendar/group.ics` | `group.csv` | `https://thebogdan.github.io/annie-calendar/group.csv` |
+| Rehearsal Calendar | `rehearsal.ics` | `https://thebogdan.github.io/annie-calendar/rehearsal.ics` | `rehearsal.csv` | `https://thebogdan.github.io/annie-calendar/rehearsal.csv` |
+| Harmony Singers | `harmony-singers.ics` | `https://thebogdan.github.io/annie-calendar/harmony-singers.ics` | `harmony-singers.csv` | `https://thebogdan.github.io/annie-calendar/harmony-singers.csv` |
+| Dancer Schedule | `dancers.ics` | `https://thebogdan.github.io/annie-calendar/dancers.ics` | `dancers.csv` | `https://thebogdan.github.io/annie-calendar/dancers.csv` |
+| Sets | `sets.ics` | `https://thebogdan.github.io/annie-calendar/sets.ics` | `sets.csv` | `https://thebogdan.github.io/annie-calendar/sets.csv` |
+| Marketing Calendar | `marketing.ics` | `https://thebogdan.github.io/annie-calendar/marketing.ics` | `marketing.csv` | `https://thebogdan.github.io/annie-calendar/marketing.csv` |
 
 Do not update `calendar.ics` or `annie-september-2026.ics` as part of normal maintenance. They are older aggregate/local artifacts and are not the feeds currently subscribed in BAND.
+
+## CSV generation and BAND import
+
+Regenerate all six CSV files after every `.ics` edit:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/ics_to_csv.py
+```
+
+The converter:
+
+- unfolds and unescapes the iCalendar source;
+- converts UTC or TZID-based times to `America/Los_Angeles` local time;
+- converts iCalendar's exclusive all-day `DTEND` to the inclusive CSV end date;
+- writes the English Google Calendar-compatible headers expected by BAND;
+- writes each venue to both `Location` and `Description` as a workaround for BAND importing the Google `Location` column as note text instead of its native Place field; and
+- leaves end date/time blank when the source event intentionally has no `DTEND`.
+
+CSV import is a snapshot, not a subscription. Imported events can be edited in BAND, but BAND edits do not update the repository. Reimporting a CSV may create duplicate events, so import each generated file only into its intended BAND calendar and do not blindly reimport an already-imported range.
+
+BAND's CSV format does not expose a documented timezone column. The generated CSV contains Pacific local wall times. Confirm the BAND calendar/event timezone is Los Angeles before importing. The standard Google CSV `Location` header is retained in case BAND improves its importer, while the duplicate description keeps the venue visible with current behavior.
 
 ## Event classification
 
@@ -166,44 +187,55 @@ Formatting rules:
 
 1. Read the new schedule and list every event with its date, local start/end time, title, calendar, and location.
 2. Resolve ambiguous abbreviations, missing end times, and venue exceptions before publishing.
-3. Edit only the applicable subscribed feed files.
-4. Validate event-block balance and inspect summaries:
+3. Edit only the applicable `.ics` source files.
+4. Regenerate all CSV counterparts:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/ics_to_csv.py
+```
+
+5. Validate event-block balance and inspect summaries:
 
 ```sh
 awk 'BEGIN{b=0;e=0} /^BEGIN:VEVENT\r?$/{b++} /^END:VEVENT\r?$/{e++} END{printf "%d begin, %d end\n",b,e; exit(b==e ? 0 : 1)}' rehearsal.ics
 rg '^SUMMARY:' rehearsal.ics
 ```
 
-5. Check for overlong unfolded lines:
+6. Check for overlong unfolded lines:
 
 ```sh
 awk 'length($0)>76 {print FILENAME ":" FNR ":" length($0)}' *.ics
 ```
 
-6. Review the diff, commit, and push:
+7. Review the diff, commit, and push:
 
 ```sh
 git diff --check
 git add group.ics rehearsal.ics harmony-singers.ics dancers.ics sets.ics marketing.ics
+git add group.csv rehearsal.csv harmony-singers.csv dancers.csv sets.csv marketing.csv
+git add scripts/ics_to_csv.py README.md CLAUDE.md
 git commit -m "Update KCMT calendars"
 git push origin main
 ```
 
-7. Wait for GitHub Pages to finish building, then verify each changed URL returns HTTP 200 with `text/calendar` and inspect the live content rather than relying only on the local file:
+8. Wait for GitHub Pages to finish building, then verify both changed URLs return HTTP 200 and inspect the live content rather than relying only on local files:
 
 ```sh
 curl -I https://thebogdan.github.io/annie-calendar/rehearsal.ics
+curl -I https://thebogdan.github.io/annie-calendar/rehearsal.csv
 curl -L -sS https://thebogdan.github.io/annie-calendar/rehearsal.ics | tr -d '\r' | rg '^SUMMARY:'
+curl -L -sS https://thebogdan.github.io/annie-calendar/rehearsal.csv | sed -n '1,5p'
 ```
 
-## BAND synchronization behavior
+## BAND subscription and import behavior
 
-- BAND subscribes to the public GitHub Pages URLs; it does not read this working directory directly.
+- BAND subscriptions read the public `.ics` URLs; CSV imports use downloaded/uploaded snapshots from the public `.csv` URLs. BAND does not read this working directory directly.
 - GitHub Pages must finish rebuilding before changes are available to BAND.
 - BAND refreshes external calendars periodically and may take about 30 minutes to show a change.
 - To request an immediate refresh in BAND, go to **Settings → Manage Events**, select/change the external calendar, and use the sync icon.
 - A title visible in BAND may temporarily be an older cached title even when the live feed has already changed.
 - Before republishing or changing a UID because an event appears missing, inspect the live GitHub Pages feed and allow or trigger a BAND sync. Changing a UID unnecessarily can create duplicate events.
+- Events from subscribed `.ics` calendars cannot be edited directly in BAND. Events created through CSV import can be edited directly, which is why CSV is the preferred BAND workflow even though both formats remain published.
 
 ## September 2026 decisions
 
